@@ -1,4 +1,5 @@
 ﻿using DSCC.CW1._9713.MVC.Models;
+using DSCC.CW1._9713.MVC.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -9,6 +10,13 @@ namespace DSCC.CW1._9713.MVC.Controllers
 {
     public class CustomerController : Controller
     {
+        private readonly IConfiguration _configuration;
+
+        public CustomerController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         string BaseUrl = "https://localhost:7097/";
 
         // GET: CustomerController
